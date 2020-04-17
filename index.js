@@ -11,7 +11,7 @@ const express              =require('express'),
       methodOverride       =require("method-override"),
       expressSanitizer     =require("express-sanitizer"),
       User                 =require("./models/user"),
-      alert                =require("alert-node"),
+      
       connectEnsureLogin   = require('connect-ensure-login'),
       port                 =process.env.PORT||6500;
 
