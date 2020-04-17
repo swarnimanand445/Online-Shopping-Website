@@ -16,7 +16,7 @@ const express              =require('express'),
       port                 =process.env.PORT||6500;
 
  /*------------------------------------------------------------------------------------------------------------ */                 
-const url=process.env.PORT||"mongodb+srv://swarnimanand445:gupta8800@test-vqkmj.mongodb.net/Shopping-Website?retryWrites=true&w=majority";
+const url=process.env.MONGO_URL||"mongodb+srv://swarnimanand445:gupta8800@test-vqkmj.mongodb.net/Shopping-Website?retryWrites=true&w=majority";
 mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true,ignoreUndefined:true,useCreateIndex:true},function(err,db)
 {
     if(err)
