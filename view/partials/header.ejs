@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">    
+    <title>Fasion Shopping</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="https://use.fontawesome.com/e6be423b18.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    
+    <style>
+      html{
+        scroll-behavior: smooth;
+      }
+        .space{
+            margin-right: 4px;
+        }
+        .logo{
+            width: 2.0em;
+        }
+      
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background-color: rgba(217, 223, 223, 0.938);">
+        <a class="navbar-brand " href="/homeDataset"><img src=./Stylesheet/logo.png class="logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/menDataset">MEN </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/womenDataset">WOMEN </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/interiorDesign">INTERIOR DESIGN</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/discover">DISCOVER</a>
+            </li>  
+            <li class="nav-item active">
+              <a class="nav-link" href="#contact1">CONTACT</a>
+          </li>  
+            <!-- <li class="nav-item dropdown active">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                PRODUCT-FORMS
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                
+                <a class="dropdown-item" href="/checkout">Checkout Form</a>
+                <a class="dropdown-item" href="/homeForm">Home Form</a>
+                
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/menForm">Men Form</a>
+                
+            
+                <a class="dropdown-item" href="/womenForm">Women Form</a>
+                
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/menShirtForm">Men Shirt Form</a>
+                <a class="dropdown-item" href="/menJacketForm">Men Jacket Form</a>
+                <a class="dropdown-item" href="/menJeansForm">Men Jeans Form</a>
+                <a class="dropdown-item" href="/menShoesForm">Men Shoes Form</a>
+                <a class="dropdown-item" href="/menSuitsForm">Men Suits Form</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/womenTopForm">Women Top Form</a>
+                <a class="dropdown-item" href="/womenDressForm">Women Dress Form</a>
+                <a class="dropdown-item" href="/womenJeansForm">Women Jeans Form</a>
+                <a class="dropdown-item" href="/womenShoesForm">Women Shoes Form</a>
+                <a class="dropdown-item" href="/womenKurtiForm">Women Kurti Form</a>
+                
+              </div>
+            </li> -->
+            
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <% if(!currentUser){ %>
+            <a href="/login" class="btn btn-outline-success  space" role="button" aria-pressed="true">Login</a>
+            <a href="/userRegister" class="btn btn-outline-info  space" role="button" aria-pressed="true">SignUp</a>
+            <a href="/cart" class="btn btn-outline-warning  space" role="button" aria-pressed="true">Cart</a>
+            
+          <%  }else{ %>
+              
+              <button class="btn btn btn-outline-info my-2 my-sm-0" type="submit" id="button1" style="margin-right:10px;text-transform: capitalize;">Welcome <%= currentUser.name %></button>
+              <a href="/cart" class="btn btn-outline-warning  space" role="button" aria-pressed="true">Cart</a>
+              <a class="btn btn-outline-danger" href="/logout" role="button">Logout</a>
+              
+              <!-- <button class="btn btn btn-danger my-2 my-sm-0" type="submit" id="button1 "><a href="/logout" style="color:white">Logout</a></button> -->
+          <%  } %>
+          </form>
+        </div>
+      </nav>
+    

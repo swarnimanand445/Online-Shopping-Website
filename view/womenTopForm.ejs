@@ -1,0 +1,34 @@
+<%- include ('partials/header.ejs') %>-
+        <link rel="stylesheet" type="text/css" href="/Stylesheet/womenForm.css">
+                <div class="imageData">
+                  <!-- <img src="https://www.bw.edu/Assets/uploads/images/03mccarrellheadshot.jpg" class="dummy"> -->
+                  <h1>Product Details</h1>
+                  <form action="/womenTopDataset" method="POST">
+                      
+                      <label><i class="fa fa-user" aria-hidden="true"style="margin-right: 3px;"></i>Product-Id</label>
+                      <input type="text" name="id1" placeholder="Enter Your Name" required>
+                      <label><i class="fa fa-user" aria-hidden="true"style="margin-right: 3px;"></i>Image</label>
+                      <input type="text" name="image" placeholder="Enter Your Name" required>
+                      <label><i class="fa fa-user-plus" aria-hidden="true"style="margin-right: 3px;"></i>Name</label>
+                      <input type="text" name="name" placeholder="Enter Userid" required>
+                      <label><i class="fa fa-user-plus" aria-hidden="true"style="margin-right: 3px;"></i>Price</label>
+                      <input type="number" name="price" placeholder="Enter Userid" required>
+                      <label><i class="fa fa-user-plus" aria-hidden="true"style="margin-right: 3px;"></i>Discount</label>
+                      <input type="text" name="discount" placeholder="Enter Userid" required>
+                      <label><i class="fa fa-user-plus" aria-hidden="true"style="margin-right: 3px;"></i>Size</label>
+                      <input type="text" name="size" placeholder="Enter Userid" required>
+                      <label><i class="fa fa-user-plus" aria-hidden="true"style="margin-right: 3px;"></i>Specification</label>
+                      <input type="text" name="specification" placeholder="Enter Userid" required>
+                      <input type="submit" name="SignUp" value="Submit">
+                      
+                      
+                      <div class="social">
+                            <a class="btn" href="https://www.facebook.com"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a class="btn" href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i> </a>
+                            <a class="btn" href="https://www.google.com"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a class="btn" href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    </div>
+                  </form>
+              </div>
+              
+  <%- include ('partials/footer.ejs') %>-

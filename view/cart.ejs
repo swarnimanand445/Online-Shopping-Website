@@ -1,0 +1,209 @@
+<%- include ('partials/header') %>-
+<style>
+    .col1{
+        margin-left: 2em;
+        padding: 1em;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 4em;
+    left: 0;
+    background: #8A2387;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #F27121, #E94057, #8A2387);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #F27121, #E94057, #8A2387); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    padding-top: 5em;
+}
+    input{
+        border:0;
+    }
+    .sidenav a {
+    font-size: 25px;
+    color: white;
+
+    }
+
+    .sidenav a:hover {
+    color: rgb(8, 6, 6);
+    background-color: rgb(211, 207, 203);
+    background-size:cover;
+    box-shadow: 6px 6px 6px 6px rgb(146, 9, 9);
+    border-radius: 5%;
+    }
+
+    .image1{
+        height: 25em;
+        width: 75em;
+        margin: 2px;
+        padding: 2px;
+        border-radius: 1em;
+        margin-bottom: 1em;
+    }
+    .image2 img:hover{
+        box-shadow: 7px 7px 7px 7px rgba(170, 170, 168, 0.856);
+        height: 27em;
+        width: 35em;
+        }
+    hr.underline{
+        border-radius: 1em;
+        height: 4px; 
+        background: rgb(235, 8, 8); 
+        border: 5px;
+        margin-right:60em;
+        margin-top: 0;
+    }   
+    hr.style-seven {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+    .btn-grad {background-image: linear-gradient(to right, #c21500 0%, #ffc500 51%, #c21500 100%)}
+    .btn-grad:hover { background-position: right center; }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 ">
+            <div class="sidenav" >
+                <div class="row" >
+                    <div class="col-sm-12 col1 ">
+                        <a href="/menShirtDataset">Shirts</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col1">
+                        <a href="/menJacketDataset" >Jackets</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col1">
+                        <a href="/menShoesDataset" >Shoes</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col1">
+                        <a href="/womenTopDataset" > Top</a>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-sm-12 col1">
+                        <a href="/womenKurtiDataset" > Kurti</a>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-sm-12 col1">
+                        <a href="/womenDressDataset" >Dresses</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div>
+                <h1 style="font-weight: bold; margin-top: 1em;">My Cart (<span id="count"></span>)</h1>
+                <hr class="underline" >
+            </div>
+           <% cartProduct.forEach(function(productDetail){ %>
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a class="image2"><img src="<%= productDetail.image %>"  class="img-fluid image1"></a>
+                        <!-- <input type="image" src="<%= productDetail.image %>"  class="img-fluid image1"> -->
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <caption>Product-Id:</caption>
+                            </div>
+                            <div class="col-sm-6 size5">
+                                <%= productDetail.pid %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <caption>Name:</caption>
+                            </div>
+                            <div class="col-sm-6 size5">
+                                <%= productDetail.name %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <caption>Price:</caption>
+                            </div>
+                            <div class="col-sm-6 size5">
+                            Rs <%= productDetail.price %>
+                            <input type="text" class="amount" value="<%= productDetail.price %>" hidden>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 ">
+                                <caption>Discount:</caption>
+                            </div>
+                            <div class="col-sm-6 size5">
+                                <%= productDetail.discount %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <caption>Size:</caption>
+                            </div>
+                            <div class="col-sm-6 size5">
+                                <%= productDetail.size%>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <caption>Specification:</caption>
+                            </div>
+                            <div class="col-sm-6 size5">
+                                <%= productDetail.specification %>
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                               
+                            </div>
+                            <div class="col-sm-6 ">
+                               
+                                <a href="/cart/delete/<%= productDetail._id %>" style="margin-top: 1em;" class="btn btn-outline-dark btn-block">Delete</a>
+                            </div>
+                        </div>
+                        
+                    </div>                                   
+                </div>
+                <hr class="style-seven" >
+           <% }) %>
+           <div class="row">
+                <div class="col-sm-6"></div>
+                <div class="col-sm-6">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <caption>Total Price:</caption>
+                        </div>
+                        <div class="col-sm-6">
+                            
+                            Rs <input type="text" id="total_amount" disabled style="background-color: white;">
+                        </div>
+                    </div>
+                </div>
+           </div>
+           <a href="/checkout" class="btn btn-lg btn-block btn-grad" role="button" aria-pressed="true" style="margin-top:1em;margin-bottom: 1em;">Checkout</a>
+            <!-- Subscribe section -->
+            <form action="/subscribe" method="POST">
+                <div class="w3-container w3-black w3-padding-32" >
+                    <h1>Subscribe</h1>
+                    <p>To get special offers and VIP treatment:</p>
+                    <p><input class="w3-input w3-border" type="text" name="subcribe1" placeholder="Enter e-mail" style="width:100%"></p>
+                    <button type="submit" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+<script type="text/javaScript" src="/javaScript/cart.js"></script>
+<%- include ('partials/footer') %>-

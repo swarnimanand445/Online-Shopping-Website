@@ -1,0 +1,26 @@
+<%- include ('partials/header.ejs') %>-
+        <link rel="stylesheet" type="text/css" href="/Stylesheet/login.css">
+                <div class="loginbox">
+                  <!-- <img src="https://www.bw.edu/Assets/uploads/images/03mccarrellheadshot.jpg" class="dummy"> -->
+                  <h1>Login </h1>
+                  <form action="/userlogin" method="POST">
+                      <label><i class="fa fa-user" aria-hidden="true" style="margin-left: 2px;"></i> User-Id</label>
+                      <input type="text" name="username" placeholder="Enter Userid" required>
+                      <!-- <label><i class="fa fa-user" aria-hidden="true" style="margin-left: 2px;"></i> Email-Id</label>
+                      <input type="email" name="" placeholder="Enter Email-Id" required> -->
+                      <label><i class="fa fa-unlock" aria-hidden="true" style="margin-left: 2px;"></i> Password</label>
+                      <input type="password" name="password" placeholder="Enter Password" required>
+                      <input type="submit" name="login" value="Login">
+                      <a href="#">Forget your Password</a><br>
+                      <a href="/userRegister">Don't have an account</a>
+                      <div class="social">
+                            <a class="btn" href="https://www.facebook.com/swarnim.anand.9"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            <a class="btn" href="https://www.twitter.com"><i class="fa fa-twitter" aria-hidden="true"></i> </a>
+                            <a class="btn" href="https://www.google.com"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            <a class="btn" href="https://www.instagram.com"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            
+                    </div>
+                  </form>
+              </div>
+              
+  <%- include ('partials/footer.ejs') %>-

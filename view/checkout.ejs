@@ -1,0 +1,29 @@
+<%- include ('partials/header.ejs') %>-
+        <link rel="stylesheet" type="text/css" href="/Stylesheet/checkout.css">
+                
+                <div class="checkout">
+                  <h1>Billing Address </h1>
+                  <form action="/checkout" method="POST">
+                      <label>Full Name</label>
+                      <input type="text" name="username" placeholder="Enter Your Name" required>
+                      <label>Email-ID</label>
+                      <input type="text" name="email" placeholder="Enter Email-ID" required>
+                      <label>Address</label>
+                      <input type="text" name="address" placeholder="Enter Your Address" required>
+                      <label>City</label>
+                      <input type="text" name="city" placeholder="Enter Your City" required>
+                      <label>Pin Code</label>
+                      <input type="number" name="code" placeholder="Enter Your Pincode" required>
+                      <label>State</label>
+                      <input type="text" name="state" placeholder="Enter Your State" required>
+                      <label>Contact No</label>
+                      <input type="number" name="number" placeholder="Enter Your Number" required>
+                     
+                      <input type="submit" name="login" class="btn-grad" value="Place Order">
+                      
+                  </form>
+                  
+              </div>
+              
+              
+  <%- include ('partials/footer.ejs') %>-

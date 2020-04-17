@@ -1,0 +1,54 @@
+<%- include ('partials/header') %>- 
+<link rel="stylesheet" type="text/css" href="/Stylesheet/payment.css">
+
+<div class="container-fluid">
+    <h1>Mode of Payment</h1>
+    <div class="row">
+        <div class="col-sm-6">
+            <button id="btn1" class="btn-block btn-dark btn12">Online Payment</button>
+            <!-- <a href="/error" class="btn btn-block btn-dark btn12">Online Payment</a> -->
+        </div>
+        <div class="col-sm-6">
+            <button id="btn2" class="btn-block btn-dark btn12">Cash On Delivery</button>
+        </div>
+    </div>
+
+    <!-- Trigger/Open The Modal -->
+    <!-- <button id="myBtn">Open Modal</button> -->
+
+    <!-- The Modal -->
+    <div id="myModal1" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close1">&times;</span>
+        <p class="para1">Currently we are not accepting online payment due to some technical problem in our payment gateway.</p>
+        <p class="para1">We are very Sorry for that.</p>
+        <p class="para1">But you can go for Cash on Delivery.</p>
+    </div>
+    </div>
+
+    <div id="myModal2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close2">&times;</span>
+            <p class="para">Thank You for shopping with us....</p>
+            <p class="para"> Your items will be delivered to you within 5 to 7 days.</p>
+        </div>
+    </div>
+    <p id="p1" style="color: rgb(56, 223, 245);font-size:x-large; display: none;">Your Order Has Been Successfully Placed!!!!</p>
+
+
+  <!-- Subscribe section -->
+  <form action="/subscribe" method="POST">
+    <div class="w3-container w3-black w3-padding-32" >
+        <h1>Subscribe</h1>
+        <p>To get special offers and VIP treatment:</p>
+        <p><input class="w3-input w3-border" type="text" name="subcribe1" placeholder="Enter e-mail" style="width:100%"></p>
+        <button type="submit" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+    </div>
+</form>
+</div>
+<script type="text/javaScript" src="/javaScript/payment.js"></script>
+<%- include ('partials/footer') %>-

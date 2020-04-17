@@ -1,0 +1,245 @@
+<%- include ('partials/header') %>-
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+<style>
+    body{
+        font-family: "Poppins", sans-serif
+    }
+    .col1{
+        margin-left: 2em;
+        padding: 1em;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 4.1em;
+    left: 0;
+    background-color: rgb(135, 137, 138);
+
+    padding-top: 5em;
+}
+.sidenav a {
+  font-size: 25px;
+  color: white;
+
+}
+
+.sidenav a:hover {
+  color: rgb(8, 6, 6);
+  background-color: rgb(211, 207, 203);
+  background-size:cover;
+  box-shadow: 6px 6px 6px 6px rgb(94, 94, 93);
+  border-radius: 5%;
+}
+hr{
+    border-radius: 1em;
+    height: 10px; 
+    background: red; 
+    border: 10px;
+    margin-right:11em
+}
+.image1{
+    height: 23em;
+    width: 76em;
+    margin: 1px;
+    padding: 1px;
+    border-radius: 1em;
+    opacity: 0.75;
+}
+img:hover{
+    opacity: 1;
+}
+
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 ">
+            <div class="sidenav" >
+            <div class="row" >
+                <div class="col-sm-12 col1 ">
+                    <a href="#home1">Home</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col1">
+                    <a href="#showcase1" >Showcase</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col1">
+                    <a href="#service1" >Services</a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col1">
+                    <a href="#designer1" >Designers</a>
+                </div>
+            </div>
+            <div class="row"> 
+                <div class="col-sm-12 col1">
+                    <a href="#package1" >Packages</a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div id="home1"></div>
+        <div class="col-sm-9">
+            <div style="margin-top:0.7em; font-weight: 650;font-size:4.3em;" id="showcase1">
+                Interior Design
+                <h1 style="margin-top:0.1em; font-weight:650;font-size: 0.7em;" >Showcase</h1>
+                <hr>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-fluid image1">
+                    <caption style="text-align: center;"></caption>
+                </div>
+                
+                <div class="col-sm-6">
+                    <img src="https://images.unsplash.com/photo-1574118139440-94aef80059b5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-fluid image1">
+                    <caption style="text-align: center;"></caption>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="https://images.unsplash.com/photo-1571843439991-dd2b8e051966?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-fluid image1">
+                    <caption style="text-align: center;"></caption>
+                </div>
+                <div class="col-sm-6">
+                    <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80" class="img-fluid image1">
+                    <caption style="text-align: center;"></caption>
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="https://images.unsplash.com/photo-1560185893-a55cbc8c57e8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" class="img-fluid image1">
+                    <caption style="text-align: center;"></caption>
+                </div>
+                <div class="col-sm-6">
+                    <img src="https://images.unsplash.com/photo-1507452786732-f2dc0a2e7b7f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjE0MjB9&auto=format&fit=crop&w=1013&q=80" class="img-fluid image1">
+                    <caption style="text-align: center;"></caption>
+                </div>
+                
+            </div>
+
+
+            <div id="service1" ></div>
+            <h1 style="margin-top: 2.0em;font-weight:640;font-size: 3.2em;" >Services</h1>
+            <hr style="border-radius: 1em;background: red; border: 10px; margin-right:49em">
+            <div style="font-weight: 490;font-size: large;">
+                We are a interior design service that focus on what's best for your home and what's best for you!
+
+Some text about our services - what we do and what we offer. We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+           
+            </div>
+            <div id="designer1" style="margin-bottom: 3.8em;"></div>
+            <h1 style="margin-top: 30px;font-weight:640;font-size: 3.2em;" >Designers</h1>
+            <hr style="border-radius: 1em;background: red; border: 10px; margin-right:47em">
+            <div style="font-weight: 490;font-size: large;"> 
+               <p>The best team in the world.</p>
+
+We are lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                <p style="font-weight: 500;margin-top: 1em;">Our designers are thoughtfully chosen:</p>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/Stylesheet/team2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body" style="background-color: rgba(236, 232, 232, 0.897);">
+                          <h5 class="card-title">Rose</h5>
+                          <p style="color: grey;font-weight: 400;">CEO & Founder</p>
+                          <p class="card-text">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                          
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/Stylesheet/image2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body" style="background-color: rgba(236, 232, 232, 0.897);">
+                          <h5 class="card-title">Rachel</h5>
+                          <p style="color: grey;font-weight: 400;">Designer</p>
+                          <p class="card-text">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                         
+                        </div>
+                      </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="/Stylesheet/image3.jpg" class="card-img-top" alt="...">
+                        <div class="card-body" style="background-color: rgba(236, 232, 232, 0.897);">
+                          <h5 class="card-title">Doe</h5>
+                          <p style="color: grey;font-weight: 400;">Architect</p>
+                          <p class="card-text">Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+                          
+                        </div>
+                      </div><div id="package1"></div>
+                </div>
+            </div>
+
+            <div id="package1" style="margin-top: 3.5em;"></div>
+            <h1 style="margin-top: 30px;font-weight:640;font-size: 3.2em;" >Packages</h1>
+            <hr style="border-radius: 1em;background: red; border: 10px; margin-right:48em">
+            <div style="font-weight: 490;font-size: large;"> 
+               <p>Some text our prices. Lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure</p>
+            </div>
+            
+            <!-- Packages / Pricing Tables -->
+            <div class="w3-row-padding">
+                <div class="w3-half w3-margin-bottom">
+                <ul class="w3-ul w3-black w3-center">
+                    <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
+                    <li class="w3-padding-16">Floorplanning</li>
+                    <li class="w3-padding-16">10 hours support</li>
+                    <li class="w3-padding-16">Photography</li>
+                    <li class="w3-padding-16">20% furniture discount</li>
+                    <li class="w3-padding-16">Good deals</li>
+                    <li class="w3-padding-16">
+                    <h2>$ 199</h2>
+                    <span class="w3-opacity">per room</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24">
+                    <button class="w3-button w3-black w3-padding-large w3-hover-red">Sign Up</button>
+                    </li>
+                </ul>
+                </div>
+                    
+                <div class="w3-half">
+                <ul class="w3-ul w3-light-grey w3-center">
+                    <li class="w3-red w3-xlarge w3-padding-32">Pro</li>
+                    <li class="w3-padding-16">Floorplanning</li>
+                    <li class="w3-padding-16">50 hours support</li>
+                    <li class="w3-padding-16">Photography</li>
+                    <li class="w3-padding-16">50% furniture discount</li>
+                    <li class="w3-padding-16">GREAT deals</li>
+                    <li class="w3-padding-16">
+                    <h2>$ 249</h2>
+                    <span class="w3-opacity">per room</span>
+                    </li>
+                    <li class="w3-light-grey w3-padding-24">
+                    <button class="w3-button w3-red w3-padding-large w3-hover-black">Sign Up</button>
+                    </li>
+                </ul>
+                </div>
+            </div>
+  
+              <!-- Subscribe section -->
+              <form action="/subscribe" method="POST">
+                <div class="w3-container w3-black w3-padding-32" >
+                    <h1>Subscribe</h1>
+                    <p>To get special offers and VIP treatment:</p>
+                    <p><input class="w3-input w3-border" type="text" name="subcribe1" placeholder="Enter e-mail" style="width:100%"></p>
+                    <button type="submit" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<%- include ('partials/footer') %>-

@@ -1,0 +1,182 @@
+<%- include ('partials/header') %>-
+<style>
+    .col1{
+        margin-left: 2em;
+        padding: 1em;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 3.5em;
+    left: 0;
+    background-color: rgb(221, 38, 38);
+
+    padding-top: 5em;
+}
+.sidenav a {
+  font-size: 25px;
+  color: white;
+
+}
+
+.sidenav a:hover {
+  color: rgb(8, 6, 6);
+  background-color: rgb(211, 207, 203);
+  background-size:cover;
+  box-shadow: 6px 6px 6px 6px rgb(146, 9, 9);
+  border-radius: 5%;
+}
+
+.image1{
+    height: 25em;
+    width: 75em;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 1em;
+    margin-bottom: 1em;
+}
+ .image2 img:hover{
+      box-shadow: 7px 7px 7px 7px rgba(170, 170, 168, 0.856);
+      height: 410px;
+      width: 500px;
+    }
+   
+hr{
+    border-radius: 1em;
+    height: 7px; 
+    background: red; 
+    border: 5px;
+    margin-right:50em;
+    margin-top: 0;
+}   
+input{
+    border:0
+}
+.size6
+{
+    right: 1.2%;
+}
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 ">
+            <div class="sidenav" >
+                <div class="row" >
+                    <div class="col-sm-12 col1 ">
+                        <a href="/menShirtDataset">Shirts</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col1">
+                        <a href="/menJacketDataset" >Jackets</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col1">
+                        <a href="/menShoesDataset" >Shoes</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col1">
+                        <a href="/menJeansDataset" > Jeans</a>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-sm-12 col1">
+                        <a href="/menSuitsDataset" > Suits</a>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <div class="col-sm-9">
+            <div>
+                <h1 style="font-weight: bold; margin-top: 1em;">General Detail</h1>
+                <hr>
+            </div>
+            <form action="/cart" method="POST">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <a class="image2"><img  name="image1" src="<%= productDetail.image %>"  class="img-fluid image1"></a>
+                        <input type="text" name="image12" class="img-fluid image1" value="<%= productDetail.image %>" hidden>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <caption>Product-Id:</caption>
+                            </div>
+                            <div class="col-sm-6 size6" >
+                              <input type="text" name="pid" value=" <%= productDetail.pid %>"> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <caption>Name:</caption>
+                            </div>
+                            <div class="col-sm-6 size6" >
+                                
+                                <input type="text" name="username" value=" <%= productDetail.name %>">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <caption>Price:</caption>
+                            </div>
+                            <div class="col-sm-6 size5" >
+                                Rs <%= productDetail.price %>
+                               <input type="number" name="price" value="<%= productDetail.price %>" hidden>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6 ">
+                                <caption>Discount:</caption>
+                            </div>
+                            <div class="col-sm-6 size5" >
+                                
+                                <input type="text" name="discount" value="<%= productDetail.discount %>"> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <caption>Size:</caption>
+                            </div>
+                            <div class="col-sm-6 size5" >
+                                
+                                <input type="text" name="size" value="<%= productDetail.size%>"> 
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <caption>Specification:</caption>
+                            </div>
+                            <div class="col-sm-6 size5"  >
+                                
+                                <input type="text" name="specification" value="<%= productDetail.specification %>"> 
+                            </div>
+                        </div>
+                        <!-- <a href="/cart" class="btn btn-outline-secondary " role="button" aria-pressed="true" style="margin-top:1em;">Add To Cart</a> -->
+                        <input type="submit" value="Add To Cart" style="margin-top:1em;" class="btn btn-outline-secondary ">
+                    </div>                                   
+                </div>
+
+            </form>
+            
+            <!-- Subscribe section -->
+            <form action="/subscribe" method="POST">
+                <div class="w3-container w3-black w3-padding-32" >
+                    <h1>Subscribe</h1>
+                    <p>To get special offers and VIP treatment:</p>
+                    <p><input class="w3-input w3-border" type="text" name="subcribe1" placeholder="Enter e-mail" style="width:100%"></p>
+                    <button type="submit" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+                </div>
+            </form>
+            
+            
+        </div>
+    </div>
+</div>
+<%- include ('partials/footer') %>-

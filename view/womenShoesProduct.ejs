@@ -1,0 +1,112 @@
+<%- include ('partials/header') %>-
+
+<style>
+   .col1{
+        margin-left: 2em;
+        padding: 1em;
+        font-weight: 600;
+        text-transform: uppercase;
+    }
+    .sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 4.1em;
+    left: 0;
+    background-color: rgba(210, 231, 14, 0.966);
+
+    padding-top: 5em;
+}
+.sidenav a {
+  font-size: 25px;
+  color: white;
+
+}
+
+.sidenav a:hover {
+  color: rgb(8, 6, 6);
+  background-color: rgb(211, 207, 203);
+  background-size:cover;
+  box-shadow: 6px 6px 6px 6px rgb(122, 105, 25);
+  border-radius: 5%;
+}
+.jumbo{
+    margin-left:0;
+    margin-right: 0em;
+    margin-top:2.7em;
+    border-radius: 1em;
+    padding-left: 0%;
+
+    width:100%
+}
+.image1{
+    height: 20em;
+    width: 70em;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 1em;
+}
+.image2 img:hover{
+      box-shadow: 7px 7px 7px 7px rgba(170, 170, 168, 0.856);
+      height: 310px;
+      width: 500px;
+    }
+</style>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3 ">
+            <div class="sidenav" >
+                <div class="row" >
+                    <div class="col-sm-12 col1 ">
+                        <a href="/womenTopDataset">Top</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col1">
+                        <a href="/womenKurtiDataset" >Kurti</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col1">
+                        <a href="womenDressDataset" >Dresses</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col1">
+                        <a href="/womenJeansDataset" > Jeans</a>
+                    </div>
+                </div>
+                <div class="row"> 
+                    <div class="col-sm-12 col1">
+                        <a href="womenShoesDataset" >Shoes</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9"style="margin-top: 2.8em;">
+           
+            <div class="row">
+                <%  product1.forEach(function(product){ %>
+                <div class="col-sm-4">
+                   <a href="/womenShoesDataset/<%= product._id %>" class="image2"> <img src="<%= product.image %>" class="img-fluid image1"></a>
+                    <caption style="text-align: center;"><%= product.name %></caption>
+                </div>
+                <%  }) %>
+            </div>
+            
+
+            <!-- Subscribe section -->
+            <form action="/subscribe" method="POST">
+                <div class="w3-container w3-black w3-padding-32" >
+                    <h1>Subscribe</h1>
+                    <p>To get special offers and VIP treatment:</p>
+                    <p><input class="w3-input w3-border" type="text" name="subcribe1" placeholder="Enter e-mail" style="width:100%"></p>
+                    <button type="submit" class="w3-button w3-red w3-margin-bottom">Subscribe</button>
+                </div>
+            </form>
+            
+        </div>
+    </div>
+</div>
+<%- include ('partials/footer') %>-
