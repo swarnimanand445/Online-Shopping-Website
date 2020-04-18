@@ -1,8 +1,21 @@
 <%- include ('partials/header.ejs') %>-
+
+    
+    <% if( message.error) { %>
+        
+        <div class="alert alert-warning alert-dismissible fade show" style="margin-top: 1.6em;padding-top: 15px;text-align: center;">
+                <button type="button" class="close" data-dismiss="alert" style="margin-top: 0.5em;"><span aria-hidden="true" aria-label="Close">&times;</span></button>
+          <h5> <strong><%= message.error %></strong> </h5>
+        </div>
+    <% } %>
         <link rel="stylesheet" type="text/css" href="/Stylesheet/login.css">
+        
+            
                 <div class="loginbox">
                   <!-- <img src="https://www.bw.edu/Assets/uploads/images/03mccarrellheadshot.jpg" class="dummy"> -->
                   <h1>Login </h1>
+                  <!-- <h1><%= message.error %></h1>
+                  <h1><%= message.success %></h1> -->
                   <form action="/userlogin" method="POST">
                       <label><i class="fa fa-user" aria-hidden="true" style="margin-left: 2px;"></i> User-Id</label>
                       <input type="text" name="username" placeholder="Enter Userid" required>
@@ -22,5 +35,5 @@
                     </div>
                   </form>
               </div>
-              
+             
   <%- include ('partials/footer.ejs') %>-

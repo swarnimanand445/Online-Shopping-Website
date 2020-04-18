@@ -6,16 +6,19 @@ const express              =require('express'),
       ObjectId             = mongodb.ObjectID,
       passport             =require("passport"),
       LocalStratergy       =require("passport-local"),
-      passportLocalMongoose=require("passport-local-mongoose"),
+      passportLocalMongoose=require('passport-local-mongoose'),
       expressSession       =require("express-session"),
       methodOverride       =require("method-override"),
       expressSanitizer     =require("express-sanitizer"),
       User                 =require("./models/user"),
-      alert                =require("alert-node"),
+      flash                =require('connect-flash'),
+      cookieParser         =require('cookie-parser'),
       connectEnsureLogin   = require('connect-ensure-login'),
       port                 =process.env.PORT||6500;
 
- /*------------------------------------------------------------------------------------------------------------ */                 
+ /*------------------------------------------------------------------------------------------------------------ */  
+ 
+               
 const url=process.env.MONGO_URL||"mongodb+srv://swarnimanand445:gupta8800@test-vqkmj.mongodb.net/Shopping-Website?retryWrites=true&w=majority";
 mongoose.connect(url,{useNewUrlParser:true,useUnifiedTopology:true,ignoreUndefined:true,useCreateIndex:true},function(err,db)
 {
@@ -47,6 +50,14 @@ app.use(expressSession({
     cookie:{maxAge:1000*60*60*6,httpOnly:true}
 }));
 
+app.use(flash());
+
+app.use(function(req, res, next){
+    res.locals.message = req.flash();
+    
+    next();
+});
+
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -54,11 +65,12 @@ passport.use(new LocalStratergy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.use(function(req,res,next)
-{
+app.use(function(req, res, next){
+    
     res.locals.currentUser=req.user;
     next();
-})
+});
+
 
 
 /*------------------------------------------------------------------------------------------------------------ */ 
@@ -1031,25 +1043,26 @@ app.post("/userRegister",function(req,res)
     let name1=req.body.name;
     let email1=req.body.email;
     let pwd=req.body.password;
-    let register={username:username1,email:email1,name:name1,password:pwd};
-    Register.create(register,function(err,user)
-    {
-        if(err)
-        {
-            console.log("Something went Wrong");
-            console.log(err);
-        }
-        else
-        {
-            console.log("Data inserted successfully...");
-            //res.redirect("/homeDataset");
-        }
-    })
+    //let register={username:username1,email:email1,name:name1,password:pwd};
+    // Register.create(register,function(err,user)
+    // {
+    //     if(err)
+    //     {
+    //         console.log("Something went Wrong");
+    //         console.log(err);
+    //     }
+    //     else
+    //     {
+    //         console.log("Data inserted successfully...");
+    //         //res.redirect("/homeDataset");
+    //     }
+    // })
     User.register(new User({email:email1,name:name1,username:username1}),pwd,function(err,user)
     {
         if(err)
         {           
-            alert("A user with the given Email-Id or User-Id is already registered with us!!! Please use a different Email-Id and User-Id to Register Yourself");
+            // alert("A user with the given Email-Id or User-Id is already registered with us!!! Please use a different Email-Id and User-Id to Register Yourself");
+            req.flash("error",err.message);
             console.log("Something went wrong :"+err);
             return res.redirect("/userRegister");
         }
@@ -1058,51 +1071,62 @@ app.post("/userRegister",function(req,res)
         { 
             passport.authenticate("local")(req,res,function(){
             console.log("new user registered successfully....");
-            return res.redirect("/homeDataset");
+            req.flash("success", "You are Successfuly Registered.");
+            return res.redirect("/userRegister");
             });
         }
     });
+    
 });
+
 
 
 /*------------------------------------------------------------------------------------------------------------ */
 app.get("/login",function(req,res)
 {
+    req.flash("error", "")
     res.render("login");
 })
 
+app.post("/userlogin", passport.authenticate("local",{
+    failureRedirect: "/login",
+    failureFlash: true,
+}) ,function(req, res){
 
-app.post('/userlogin', (req, res, next) => {
-    passport.authenticate('local',
-    (err, user, info) => {
-      if (err) {
-        alert("Invalid Email-Id or Password"); 
-        //return next(err);
-        console.log("Login wrong1"+err);
-        return res.redirect('/login');
-      }
+    req.flash("success", "Successfully Logged in");
+    return res.redirect("/");
+});
+// app.post('/userlogin', (req, res, next) => {
+//     passport.authenticate('local',
+//     (err, user, info) => {
+//       if (err) {
+//         alert("Invalid Email-Id or Password"); 
+//         //return next(err);
+//         console.log("Login wrong1"+err);
+//         return res.redirect('/login');
+//       }
   
-      if (!user) {
-        alert("Invalid Email-Id or Password");  
-        console.log("Login wrong2"+err); 
-        return res.redirect('/login');
+//       if (!user) {
+//         alert("Invalid Email-Id or Password");  
+//         console.log("Login wrong2"+err); 
+//         return res.redirect('/login');
         
-      }
+//       }
   
-      req.logIn(user, function(err) {
-          if (err) {
-          alert("Invalid Email-Id or Password");   
-          //return next(err);
-          console.log("Login wrong3"+err);
-           return res.redirect('/login');
+//       req.logIn(user, function(err) {
+//           if (err) {
+//           alert("Invalid Email-Id or Password");   
+//           //return next(err);
+//           console.log("Login wrong3"+err);
+//            return res.redirect('/login');
          
-        }
+//         }
   
-        return res.redirect('/');
-      });
+//         return res.redirect('/');
+//       });
   
-    })(req, res, next);
-  });
+//     })(req, res, next);
+//   });
   
 /*--------------------------------------------- */
 //User Logout form

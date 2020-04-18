@@ -1,9 +1,23 @@
 <%- include ('partials/header.ejs') %>-
+<% if( message.success) { %>
+  <div class="alert alert-success alert-dismissible fade show" style="margin-top: 1.5em;padding-top: 15px;text-align: center;">
+    <button type="button" class="close" data-dismiss="alert" style="margin-top: 0.5em;"><span aria-hidden="true" aria-label="Close">&times;</span></button>
+     <h5><%= message.success %><a href="/login" class="alert-link">Please log in!!!</a> </h5>
+  </div>
+<% } %>
+
+<% if( message.error) { %>
+  <div class="alert alert-warning alert-dismissible fade show" style="margin-top: 1.5em;padding-top: 15px;text-align: center;">
+    <button type="button" class="close" data-dismiss="alert" style="margin-top: 0.5em;"><span aria-hidden="true" aria-label="Close">&times;</span></button>
+    <h5> <strong><%= message.error %></strong> </h5>
+  </div>
+<% } %>
         <link rel="stylesheet" type="text/css" href="/Stylesheet/newUser.css">
                 <div class="userRegister">
                   <!-- <img src="https://www.bw.edu/Assets/uploads/images/03mccarrellheadshot.jpg" class="dummy"> -->
                   
                   <h1>Sign Up</h1>
+                  
                   <form action="/userRegister" method="POST">
                     <label><i class="fa fa-user" aria-hidden="true"style="margin-right: 3px;"></i>Full Name</label>
                       <input type="text" name="name" placeholder="Enter Your Name" required>
