@@ -20,7 +20,7 @@ body{
     height: 500px;
     background:url("https://assets.website-files.com/5bfd1275cc56e15ce750b18e/5c289afb9a15757152893aa7_70.%20Honeydew.jpg");
     color: rgb(22, 21, 21);
-    top: 50%;
+    top: 55%;
     left: 50%;
     position: absolute;
     transform: translate(-50%,-50%);
